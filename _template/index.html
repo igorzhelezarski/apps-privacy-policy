@@ -1,80 +1,197 @@
 <!doctype html>
 <!--
   Template for a new app's privacy policy.
-  1. Copy this folder to /<app-slug>/ (for example /my-new-game/).
-  2. Replace every [BRACKETED] value and delete sections the app does not need.
-  3. Add the app to the list in /index.html.
-  4. Remove the "noindex" line below in the copy.
+  1. Copy this folder to /<app-slug>/ (for example /my-new-game/) and add img/icon.png,
+     img/icon-64.png, img/feature.jpg (1024x500) and a few img/shot-*.jpg (540px wide).
+  2. Replace every [BRACKETED] value, edit the "at a glance" tiles, and delete sections the app does not need.
+  3. Remove the "noindex" line below in the copy.
+  4. Add a game card for the app to /index.html.
 -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <title>[APP NAME] privacy policy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[APP NAME] privacy policy · Reimagined Bits</title>
   <meta name="description" content="How [APP NAME] handles your data.">
+  <meta property="og:title" content="[APP NAME] privacy policy">
+  <meta property="og:image" content="img/feature.jpg">
+  <link rel="icon" href="img/icon-64.png">
+  <link rel="preload" href="../assets/fonts/nunito-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-<main>
-  <a class="back" href="../">&larr; All privacy policies</a>
-  <h1>[APP NAME] privacy policy</h1>
-  <p class="meta">Effective date: [DATE] · Last updated: [DATE]</p>
+<a class="skip" href="#policy">Skip to the policy</a>
 
-  <p>[APP NAME] ("the app") is [a free / a paid] [app / game] for [PLATFORMS], published by Reimagined Bits ("we", "us"). This policy explains what information the app uses, why, and the choices you have.</p>
-
-  <h2>Information kept on your device</h2>
-  <p>[List what the app saves locally: progress, settings, etc.] This information never leaves your device and we never see it. Uninstalling the app deletes it.</p>
-
-  <!-- Keep only if the app shows ads. -->
-  <h2>Ads</h2>
-  <p>[Ad network, what its SDK collects, link to its privacy policy, consent and tracking choices.]</p>
-
-  <!-- Keep only if the app has analytics or crash reporting. -->
-  <h2>Analytics and crash reports</h2>
-  <p>[Service name, what it collects, why, link to its privacy policy.]</p>
-
-  <!-- Keep only if the app has in-app purchases. -->
-  <h2>Purchases</h2>
-  <p>Purchases are made through Google Play or the Apple App Store. The store processes the payment and tells the app that the purchase was made. We never receive your payment details.</p>
-
-  <!-- Keep only if the app asks for device permissions (camera, location, microphone...). -->
-  <h2>Device permissions</h2>
-  <p>[Each permission and exactly what it is used for.]</p>
-
-  <h2>Summary of data collected</h2>
-  <div class="table-wrap">
-  <table>
-    <thead>
-      <tr><th>Data</th><th>Collected by</th><th>Purpose</th><th>Shared with</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>[Data type]</td><td>[Who]</td><td>[Why]</td><td>[Whom]</td></tr>
-    </tbody>
-  </table>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Reimagined Bits home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#4a4fd8"/><rect x="7" y="7" width="8" height="8" rx="2.5" fill="#fff"/><rect x="17" y="7" width="8" height="8" rx="2.5" fill="#f5b301"/><rect x="7" y="17" width="8" height="8" rx="2.5" fill="#f5b301"/><rect x="17" y="17" width="8" height="8" rx="2.5" fill="#fff" opacity=".55"/></svg>
+      Reimagined Bits
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="../#games">Games</a>
+      <a href="../#privacy">Privacy</a>
+      <a class="hide-sm" href="#contact">Contact</a>
+    </nav>
   </div>
-  <p>We do not sell your personal information.</p>
+</header>
 
-  <h2>Children</h2>
-  <p>[Who the app is for. If children are in the audience: what is done to follow COPPA, GDPR and the Google Play Families policy.]</p>
+<main>
+  <section class="policy-hero">
+    <div class="wrap">
+      <div>
+        <div class="crumbs"><a href="../">All games</a> &rsaquo; [APP NAME]</div>
+        <div class="app"><img src="img/icon.png" alt="" width="60" height="60"><span>[APP NAME]</span></div>
+        <h1>Privacy policy</h1>
+        <p class="dates">Effective [DATE] · Last updated [DATE]</p>
+        <div class="actions">
+          <a class="btn btn-play" href="https://play.google.com/store/apps/details?id=[ANDROID APPLICATION ID]" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 2.8 14 12l-9.5 9.2c-.3-.2-.5-.6-.5-1V3.8c0-.4.2-.8.5-1Z" fill="#34a853"/><path d="m17.2 8.9-3.2 3.1L4.5 2.8l.2-.1c.4-.2.9-.2 1.3 0Z" fill="#4285f4"/><path d="m17.2 15.1-11.2 6.2c-.4.2-.9.2-1.3 0l-.2-.1L14 12Z" fill="#ea4335"/><path d="M20.3 10.6c.9.5.9 2.3 0 2.8l-3.1 1.7L14 12l3.2-3.1Z" fill="#fbbc04"/></svg>
+            <div><small>Get it on</small><span>Google Play</span></div>
+          </a>
+        </div>
+      </div>
+      <div class="art"><img src="img/feature.jpg" alt="[DESCRIBE THE FEATURE GRAPHIC]" width="1024" height="500"></div>
+    </div>
+  </section>
 
-  <h2>Legal basis (EEA, UK and Switzerland)</h2>
-  <p>[Consent for personalized ads / analytics, legitimate interest, contract for purchases.]</p>
+  <section class="glance" aria-label="At a glance">
+    <div class="wrap">
+      <div class="grid">
+        <div class="tile">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/><path d="M3 3l18 18"/></svg></div>
+          <h3>No account</h3>
+          <p>No sign-in, no names, no email addresses.</p>
+        </div>
+        <div class="tile">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+          <h3>Saved on your device</h3>
+          <p>Progress and settings never leave it.</p>
+        </div>
+        <div class="tile">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Child-safe ads</h3>
+          <p>[One short line.]</p>
+        </div>
+        <div class="tile">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></div>
+          <h3>Store payments</h3>
+          <p>We never see your payment details.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h2>Retention and international transfers</h2>
-  <p>[How long data is kept and where it is processed.]</p>
+  <div class="wrap policy-layout">
+    <nav class="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#device">On your device</a></li>
+        <li><a href="#ads">Ads</a></li>
+        <li><a href="#purchases">Purchases</a></li>
+        <li><a href="#permissions">Permissions</a></li>
+        <li><a href="#data">Data collected</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#legal">Legal basis</a></li>
+        <li><a href="#retention">Retention</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#changes">Changes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
 
-  <h2>Your rights and choices</h2>
-  <p>Depending on where you live, you may have the right to access, correct, delete or object to the use of your personal data, and to complain to your local data protection authority. Contact us and we will help.</p>
+    <article class="policy" id="policy">
+      <section id="summary">
+        <h2><span class="n">1</span>Summary</h2>
+        <p class="lead">[APP NAME] ("the app") is [a free / a paid] [app / game] for [PLATFORMS], published by Reimagined Bits ("we", "us"). This policy explains what information the app uses, why, and the choices you have.</p>
+        <p>[Two or three sentences in plain words: accounts, servers, ads, analytics.]</p>
+      </section>
 
-  <h2>Changes to this policy</h2>
-  <p>If this policy changes, the new version will be posted at this address with a new "Last updated" date.</p>
+      <section id="device">
+        <h2><span class="n">2</span>Information kept on your device</h2>
+        <div class="with-figure">
+          <div>
+            <p>[List what the app saves locally.] This information never leaves your device and we never see it. Uninstalling the app deletes it.</p>
+          </div>
+          <figure><img src="img/shot-[NAME].jpg" alt="[DESCRIBE]" width="540" height="1169" loading="lazy"><figcaption>[CAPTION]</figcaption></figure>
+        </div>
+      </section>
 
-  <h2>Contact</h2>
-  <p>Reimagined Bits<br>
-  Email: <a href="mailto:freetimeappsdevelopment@gmail.com">freetimeappsdevelopment@gmail.com</a></p>
+      <!-- Keep only if the app shows ads. -->
+      <section id="ads">
+        <h2><span class="n">3</span>Ads</h2>
+        <p>[Ad network, what its SDK collects, link to its privacy policy, consent and tracking choices.]</p>
+      </section>
 
-  <footer><a href="../">All privacy policies</a></footer>
+      <!-- Keep only if the app has in-app purchases. -->
+      <section id="purchases">
+        <h2><span class="n">4</span>Purchases</h2>
+        <p>Purchases are made through Google Play or the Apple App Store. The store processes the payment and tells the app that the purchase was made. We never receive your payment details.</p>
+      </section>
+
+      <!-- Keep only if the app asks for device permissions (camera, location, microphone...). -->
+      <section id="permissions">
+        <h2><span class="n">5</span>Device permissions</h2>
+        <p>[Each permission and exactly what it is used for.]</p>
+      </section>
+
+      <section id="data">
+        <h2><span class="n">6</span>Summary of data collected</h2>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Data</th><th>Collected by</th><th>Purpose</th><th>Shared with</th></tr></thead>
+          <tbody><tr><td>[Data type]</td><td>[Who]</td><td>[Why]</td><td>[Whom]</td></tr></tbody>
+        </table>
+        </div>
+        <p>We do not sell your personal information.</p>
+      </section>
+
+      <section id="children">
+        <h2><span class="n">7</span>Children</h2>
+        <p>[Who the app is for. If children are in the audience: what is done to follow COPPA, GDPR and the Google Play Families policy.]</p>
+      </section>
+
+      <section id="legal">
+        <h2><span class="n">8</span>Legal basis (EEA, UK and Switzerland)</h2>
+        <p>[Consent for personalized ads or analytics, legitimate interest, contract for purchases.]</p>
+      </section>
+
+      <section id="retention">
+        <h2><span class="n">9</span>Retention and international transfers</h2>
+        <p>[How long data is kept and where it is processed.]</p>
+      </section>
+
+      <section id="rights">
+        <h2><span class="n">10</span>Your rights and choices</h2>
+        <p>Depending on where you live, you may have the right to access, correct, delete or object to the use of your personal data, and to complain to your local data protection authority. Contact us and we will help.</p>
+      </section>
+
+      <section id="changes">
+        <h2><span class="n">11</span>Changes to this policy</h2>
+        <p>If this policy changes, the new version will be posted at this address with a new "Last updated" date.</p>
+      </section>
+
+      <section id="contact">
+        <h2><span class="n">12</span>Contact</h2>
+        <p>Reimagined Bits<br>
+        Email: <a href="mailto:freetimeappsdevelopment@gmail.com">freetimeappsdevelopment@gmail.com</a><br>
+        Google Play: <a href="https://play.google.com/store/apps/developer?id=Reimagined+Bits" rel="noopener">Reimagined Bits</a></p>
+      </section>
+    </article>
+  </div>
 </main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>© 2026 Reimagined Bits</div>
+    <div class="links">
+      <a href="../">All games</a>
+      <a href="https://play.google.com/store/apps/developer?id=Reimagined+Bits" rel="noopener">Google Play</a>
+      <a href="mailto:freetimeappsdevelopment@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
