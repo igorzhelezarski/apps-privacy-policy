@@ -4,8 +4,12 @@
   1. Copy this folder to /<app-slug>/ (for example /my-new-game/) and add img/icon.png,
      img/icon-64.png, img/feature.jpg (1024x500) and a few img/shot-*.jpg (540px wide).
   2. Replace every [BRACKETED] value, edit the "at a glance" tiles, and delete sections the app does not need.
+     For an app that is not a game, point the crumbs link at ../#apps and say "app" instead of "game".
   3. Remove the "noindex" line below in the copy.
-  4. Add a game card for the app to /index.html.
+  4. Optional: add class="theme-blue" (or a new theme in assets/style.css) to <body> to recolor the hero.
+     If the screenshots are not 1242x2688, set style="--shot-ratio: W / H" on <body>, for example 9 / 16.
+  5. In /index.html, add a product card under "Our games" or "Our apps", a line in the
+     "Privacy policies" list, and a footer link.
 -->
 <html lang="en">
 <head>
@@ -31,6 +35,7 @@
     </a>
     <nav class="nav" aria-label="Main">
       <a href="../#games">Games</a>
+      <a href="../#apps">Apps</a>
       <a href="../#privacy">Privacy</a>
       <a class="hide-sm" href="#contact">Contact</a>
     </nav>
@@ -41,7 +46,7 @@
   <section class="policy-hero">
     <div class="wrap">
       <div>
-        <div class="crumbs"><a href="../">All games</a> &rsaquo; [APP NAME]</div>
+        <div class="crumbs"><a href="../#games">All games</a> &rsaquo; [APP NAME]</div>
         <div class="app"><img src="img/icon.png" alt="" width="60" height="60"><span>[APP NAME]</span></div>
         <h1>Privacy policy</h1>
         <p class="dates">Effective [DATE] · Last updated [DATE]</p>
@@ -187,7 +192,7 @@
   <div class="wrap">
     <div>© 2026 Reimagined Bits</div>
     <div class="links">
-      <a href="../">All games</a>
+      <a href="../">All games and apps</a>
       <a href="https://play.google.com/store/apps/developer?id=Reimagined+Bits" rel="noopener">Google Play</a>
       <a href="mailto:reimaginedbits@gmail.com">Contact</a>
     </div>

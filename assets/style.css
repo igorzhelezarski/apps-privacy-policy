@@ -141,7 +141,7 @@ section { scroll-margin-top: 80px; }
 /* Screenshot strip */
 .shots { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(150px, 1fr); gap: 14px; overflow-x: auto; padding: 4px 4px 14px; scroll-snap-type: x mandatory; }
 .shots figure { margin: 0; scroll-snap-align: start; }
-.shots img { border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow); aspect-ratio: 1242 / 2688; object-fit: cover; width: 100%; }
+.shots img { border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow); aspect-ratio: var(--shot-ratio, 1242 / 2688); object-fit: cover; width: 100%; }
 .shots figcaption { text-align: center; font-size: .85rem; color: var(--muted); margin-top: 8px; font-weight: 700; }
 .game-card .shots { padding: 0 28px 28px; }
 @media (min-width: 900px) { .game-card .shots { padding: 0 36px 36px; } }
@@ -157,8 +157,49 @@ section { scroll-margin-top: 80px; }
 .contact-card h2 { margin: 0 0 4px; font-size: 1.4rem; }
 .contact-card p { margin: 0; color: var(--muted); }
 
+/* Catalog of games and apps on the index */
+.catalog { display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); }
+.product-card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; }
+.product-card .banner { display: block; aspect-ratio: 1024 / 500; background: var(--banner-bg, #8fd16a); overflow: hidden; }
+.product-card .banner img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.product-card .banner:hover img { transform: scale(1.03); }
+.product-body { display: flex; flex-direction: column; flex: 1; padding: 22px 24px 24px; }
+.product-body .game-title { margin-bottom: 10px; }
+.product-body .game-title img { width: 60px; height: 60px; border-radius: 16px; }
+.product-body .game-title h3 { font-size: 1.65rem; }
+.product-body > p { margin: 0 0 4px; }
+.product-body .tags { margin-top: 12px; }
+.product-body .actions { margin-top: auto; padding-top: 20px; }
+.kind { display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--game); margin-bottom: 2px; }
+.empty-card { display: flex; gap: 16px; align-items: center; border: 2px dashed var(--border); border-radius: 22px; padding: 26px 24px; color: var(--muted); }
+.empty-card .ico { flex: none; width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: var(--brand-soft); color: var(--brand); }
+.empty-card .ico svg { width: 24px; height: 24px; }
+.empty-card b { color: var(--ink); display: block; }
+.empty-card p { margin: 0; }
+
+/* Quick list of every policy, for store reviewers */
+.policy-index { margin-top: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 22px; }
+.policy-index h3 { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 14px 0 4px; }
+.policy-index ul { list-style: none; margin: 0 0 8px; padding: 0; }
+.policy-index li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; padding: 10px 0; border-top: 1px solid var(--border); }
+.policy-index li:first-child { border-top: 0; }
+.policy-index .name { display: flex; align-items: center; gap: 10px; font-weight: 800; color: var(--ink); }
+.policy-index .name img { width: 32px; height: 32px; border-radius: 9px; }
+.policy-index a { font-weight: 700; }
+
+/* Per-app color themes. Put the class on <body> of a policy page, or on an index card. */
+.theme-blue {
+  --hero-bg: linear-gradient(180deg, #3d73e3 0%, #1f469d 100%);
+  --banner-bg: #3366d5;
+  --game: #2c5bc9;
+  --game-soft: #e4ebfc;
+}
+@media (prefers-color-scheme: dark) {
+  .theme-blue { --game: #93b2ff; --game-soft: #1c2747; }
+}
+
 /* Policy page */
-.policy-hero { background: linear-gradient(180deg, #8ccf5c 0%, #4ba43f 100%); color: #fff; position: relative; overflow: hidden; }
+.policy-hero { background: var(--hero-bg, linear-gradient(180deg, #8ccf5c 0%, #4ba43f 100%)); color: #fff; position: relative; overflow: hidden; }
 .policy-hero::after { content: ""; position: absolute; inset: auto 0 0 0; height: 38%; background: linear-gradient(180deg, transparent, rgba(0,0,0,.18)); pointer-events: none; }
 .policy-hero .wrap { position: relative; z-index: 1; display: grid; gap: 28px; align-items: center; padding-top: 44px; padding-bottom: 48px; }
 @media (min-width: 860px) { .policy-hero .wrap { grid-template-columns: 1fr 1fr; padding-top: 56px; padding-bottom: 60px; } }
