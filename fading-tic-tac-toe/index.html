@@ -62,9 +62,9 @@
           <p>Scores, settings and games in progress never leave it.</p>
         </div>
         <div class="tile">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div>
-          <h3>Your ad choices</h3>
-          <p>Change them any time in Settings.</p>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Ads set by age</h3>
+          <p>Players under 18 only get non-personalized ads.</p>
         </div>
         <div class="tile">
           <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></div>
@@ -85,7 +85,7 @@
         <li><a href="#purchases">"Remove ads"</a></li>
         <li><a href="#permissions">Permissions</a></li>
         <li><a href="#data">Data collected</a></li>
-        <li><a href="#children">Children</a></li>
+        <li><a href="#children">Age and children</a></li>
         <li><a href="#legal">Legal basis</a></li>
         <li><a href="#retention">Retention</a></li>
         <li><a href="#rights">Your rights</a></li>
@@ -98,7 +98,7 @@
       <section id="summary">
         <h2><span class="n">1</span>Summary</h2>
         <p class="lead">Fading Tic-Tac-Toe ("the game") is a free game for Android phones and tablets, published by Reimagined Bits ("we", "us"). This policy explains what information the game uses, why, and the choices you have.</p>
-        <p>In short: the game has no accounts, no sign-in, no analytics and no servers of its own. Your scores, settings and any unfinished game stay on your device. The free version shows ads from Google AdMob, and Google collects some device information to deliver and measure those ads. Where the law requires it, the game asks for your consent first.</p>
+        <p>In short: the game has no accounts, no sign-in, no analytics and no servers of its own. Your scores, settings and any unfinished game stay on your device. The free version shows ads from Google AdMob, and Google collects some device information to deliver and measure those ads. When you first open the game it asks your age group, and keeps the answer on your device: players under 18 only get non-personalized, age-appropriate ads, and adults are asked for consent first where the law requires it.</p>
       </section>
 
       <section id="device">
@@ -110,6 +110,7 @@
               <li>Your settings: language, light or dark theme, sound, vibration, the "fades next" ring and the move limit</li>
               <li>Your last game choices: Fading or Classic rules, difficulty, and whether you play X or O</li>
               <li>Your wins, losses and draws against the device, kept separately for each difficulty</li>
+              <li>Your age group (under 13, 13 to 17, or 18 or older), used only to choose how ads are shown</li>
               <li>An unfinished game, so you can continue it later</li>
               <li>Whether "Remove ads" has been bought</li>
             </ul>
@@ -144,9 +145,13 @@
           <figure><img src="img/shot-fading.jpg" alt="A Fading Tic-Tac-Toe game in progress, with no ads on screen" width="540" height="1080" loading="lazy"><figcaption>No ads while you play.</figcaption></figure>
         </div>
 
+        <h3>Ads by age group</h3>
+        <p>Ads are only requested after you have answered the age question. How they are shown depends on the answer, as described in <a href="#children">Age and children</a>:</p>
+        <div class="callout"><b>Under 13</b> and <b>13 to 17</b>: ads are never personalized and are limited to age-appropriate content, and the consent form is not shown. <b>18 or older</b>: ads work as described in this section, after the consent form where the law requires it.</div>
+
         <h3>Your choices</h3>
         <ul>
-          <li><strong>European Economic Area, United Kingdom and Switzerland:</strong> before any ad is shown, the game asks for your consent through Google's consent form. Ads are only requested after the form allows it. You can change your choice at any time under <em>Settings &gt; Privacy options</em>.</li>
+          <li><strong>European Economic Area, United Kingdom and Switzerland (players 18 or older):</strong> before any ad is shown, the game asks for your consent through Google's consent form. Ads are only requested after the form allows it. You can change your choice at any time under <em>Settings &gt; Privacy options</em>.</li>
           <li><strong>Android:</strong> you can reset or delete your advertising ID, or opt out of personalized ads, in your device's Settings &gt; Privacy &gt; Ads (the exact menu depends on the device).</li>
           <li>You can also manage the ads Google shows you in <a href="https://myadcenter.google.com/">Google My Ad Center</a>.</li>
         </ul>
@@ -176,7 +181,8 @@
           </thead>
           <tbody>
             <tr><td>Settings, scores and unfinished game</td><td><span class="pill ok">Your device only</span></td><td>Game functionality</td><td>No one</td></tr>
-            <tr><td>Advertising ID and other device identifiers</td><td>Google Mobile Ads SDK</td><td>Advertising, ad measurement</td><td>Google</td></tr>
+            <tr><td>Age group</td><td><span class="pill ok">Your device only</span></td><td>Choosing how ads are shown</td><td>No one</td></tr>
+            <tr><td>Advertising ID and other device identifiers</td><td>Google Mobile Ads SDK</td><td>Advertising, ad measurement (not used for personalization for players under 18)</td><td>Google</td></tr>
             <tr><td>Approximate location (from IP address)</td><td>Google Mobile Ads SDK</td><td>Advertising, fraud prevention</td><td>Google</td></tr>
             <tr><td>Ad interactions</td><td>Google Mobile Ads SDK</td><td>Advertising, ad measurement</td><td>Google</td></tr>
             <tr><td>Crash logs and diagnostics</td><td>Google Mobile Ads SDK</td><td>Ads SDK stability</td><td>Google</td></tr>
@@ -188,14 +194,21 @@
       </section>
 
       <section id="children">
-        <h2><span class="n">7</span>Children</h2>
-        <p>The game is meant for players aged 13 and over and is not directed at children under 13. We do not knowingly collect personal information from children, and the game never asks for a name, email address, photo or age.</p>
+        <h2><span class="n">7</span>Age and children</h2>
+        <p>When you first open the game, it asks which age group you are in: under 13, 13 to 17, or 18 or older. Nothing is preselected, and the game never asks for an exact age or date of birth. The answer is saved only on your device, is never sent to us or to Google, and is used only to choose how ads are shown:</p>
+        <ul>
+          <li><strong>Under 13:</strong> ad requests are marked as directed to children, ads are never personalized and are limited to content suitable for all ages (rated G), and the advertising ID is not used for personalization.</li>
+          <li><strong>13 to 17:</strong> ad requests are marked for teen treatment, and ads are never personalized and are limited to content rated T (teen) or lower.</li>
+          <li><strong>18 or older:</strong> ads are shown as described in <a href="#ads">Ads</a>, after the consent form where the law requires it.</li>
+        </ul>
+        <div class="callout">For players under 18 the consent form is not shown, because their ads are never personalized. These settings follow the US Children's Online Privacy Protection Act (COPPA), the GDPR rules for children and the Google Play Families policy. Google AdMob is a Google Play Families self-certified ads SDK.</div>
+        <p>We do not knowingly collect personal information from children, and the game never asks for a name, email address or photo. The age question is asked only once; to answer it again, clear the game's data in your device's settings or reinstall the game.</p>
         <p>If you believe a child's personal information has been collected through the game, contact us and we will work with you and Google to address it.</p>
       </section>
 
       <section id="legal">
         <h2><span class="n">8</span>Legal basis (EEA, UK and Switzerland)</h2>
-        <p>Personalized ads, and any use of cookies or device identifiers that requires it, are based on your consent, which you can withdraw at any time under <em>Settings &gt; Privacy options</em>. Non-personalized ads and fraud prevention are based on our legitimate interest in offering the game for free. Purchases are processed to perform the purchase contract.</p>
+        <p>For players 18 or older, personalized ads, and any use of cookies or device identifiers that requires it, are based on your consent, which you can withdraw at any time under <em>Settings &gt; Privacy options</em>. Players under 18 only get non-personalized ads. Non-personalized ads and fraud prevention are based on our legitimate interest in offering the game for free. Purchases are processed to perform the purchase contract.</p>
       </section>
 
       <section id="retention">
