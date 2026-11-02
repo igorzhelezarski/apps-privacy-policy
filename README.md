@@ -23,7 +23,7 @@ SIL Open Font License, in `assets/fonts/`). No build step.
    **Our games** or **Our apps** and change it (set `<span class="kind">` to "Board game",
    "Productivity app" and so on). Then add a line to the **Privacy policies** list and a footer link.
    Remove the "Apps are on the way" placeholder when the first app is added.
-   Optional: give the card and the policy page's `<body>` a color theme such as `theme-blue`
+   Optional: give the policy page's `<body>` a color theme such as `theme-blue`
    (themes live at the end of the catalog styles in `assets/style.css`).
 5. Merge to `main`. The page is live at `https://igorzhelezarski.github.io/apps-privacy-policy/my-new-game/`
    within a minute or two. Give that URL to Google Play and the App Store.
