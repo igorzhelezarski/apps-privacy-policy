@@ -7,6 +7,9 @@ Privacy policy pages for apps and games published by Reimagined Bits, served wit
 | Index of all apps | https://igorzhelezarski.github.io/apps-privacy-policy/ |
 | Whack It World | https://igorzhelezarski.github.io/apps-privacy-policy/whack-it-world/ |
 | Fading Tic-Tac-Toe | https://igorzhelezarski.github.io/apps-privacy-policy/fading-tic-tac-toe/ |
+| Cat Tower | https://igorzhelezarski.github.io/apps-privacy-policy/cat-tower/ |
+| Bloomgrid | https://igorzhelezarski.github.io/apps-privacy-policy/bloomgrid/ |
+| Arrows Escape | https://igorzhelezarski.github.io/apps-privacy-policy/arrows-escape/ |
 
 Plain HTML with one shared stylesheet (`assets/style.css`) and self-hosted fonts (Nunito and Lilita One,
 SIL Open Font License, in `assets/fonts/`). No build step.
@@ -35,3 +38,15 @@ page rather than sharing one general policy.
 
 Edit the app's `index.html`, change the "Last updated" date, and merge. The URL stays the same, so
 nothing needs to change in the store listings.
+
+## Firebase Hosting
+
+The same pages are also published on Firebase Hosting (project `reimagined-bits`): the index at
+https://reimagined-bits.web.app and each policy on its own site, for example https://cat-tower-site.web.app.
+Every site gets `app-ads.txt`.
+
+1. For a new app, create its Hosting site once (`firebase hosting:sites:create my-new-game-site`) and add
+   it to `firebase/sites.json`.
+2. Run `python3 firebase/build.py`. It writes `firebase/dist/` with the links between pages pointing at
+   the Firebase addresses, plus `firebase/firebase.json` and `firebase/.firebaserc`.
+3. From `firebase/`, run `firebase deploy --only hosting`.
