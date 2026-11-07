@@ -283,16 +283,39 @@ th { background: var(--surface-2); color: var(--ink); font-weight: 800; }
 
 .gallery { margin-top: 56px; }
 
-/* Index hero art: two tilted phones on wide screens */
+/* Index hero: brand logo, and a slider of tilted phones that cycles through every game */
 .hero .wrap { display: grid; gap: 32px; align-items: center; }
-.hero-art { display: none; position: relative; height: 380px; }
+.hero-logo { display: block; width: 84px; height: 84px; border-radius: 22px; margin-bottom: 18px; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+.brand img { width: 32px; height: 32px; border-radius: 8px; flex: none; }
+.hero-art { position: relative; height: 400px; max-width: 420px; width: 100%; justify-self: center; }
 @media (min-width: 900px) {
   .hero .wrap { grid-template-columns: 1.1fr .9fr; }
-  .hero-art { display: block; }
+  .hero-art { justify-self: end; }
 }
-.hero-art img { position: absolute; width: 180px; border-radius: 22px; border: 5px solid #0d1022; box-shadow: 0 24px 50px rgba(0,0,0,.45); }
-.hero-art img:first-child { right: 170px; top: 30px; transform: rotate(-7deg); }
-.hero-art img:last-child { right: 10px; top: 0; transform: rotate(5deg); }
+.hero-art .slide { position: absolute; top: 0; right: 10px; width: 180px; margin: 0; opacity: 0; pointer-events: none;
+  transform: translateX(-120px) rotate(-12deg) scale(.9);
+  transition: transform .8s cubic-bezier(.2,.7,.2,1), opacity .8s ease, right .8s cubic-bezier(.2,.7,.2,1), top .8s cubic-bezier(.2,.7,.2,1); }
+.hero-art .slide img { display: block; width: 100%; aspect-ratio: 9 / 17; object-fit: cover; object-position: top; border-radius: 22px; border: 5px solid #0d1022; box-shadow: 0 24px 50px rgba(0,0,0,.45); }
+.hero-art .slide.is-back { right: 170px; top: 30px; opacity: 1; z-index: 1; transform: rotate(-7deg); }
+.hero-art .slide.is-front { right: 10px; top: 0; opacity: 1; z-index: 2; pointer-events: auto; transform: rotate(5deg); }
+.hero-art .slide.is-out { right: -40px; top: 10px; opacity: 0; z-index: 3; transform: rotate(14deg) scale(.95); }
+.hero-art .slide.is-in { right: 300px; top: 50px; opacity: 0; transform: rotate(-12deg) scale(.9); }
+.hero-art .caption { position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.hero-art .caption a { color: #fff; font-weight: 800; text-decoration: none; }
+.hero-art .caption a span { color: #cdd1ea; font-weight: 700; font-size: .9rem; margin-left: 6px; }
+.hero-art .dots { display: flex; gap: 8px; }
+.hero-art .dots button { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 999px; background: rgba(255,255,255,.35); cursor: pointer; transition: width .3s ease, background .3s ease; }
+.hero-art .dots button[aria-current="true"] { width: 26px; background: var(--accent); }
+@media (max-width: 899px) {
+  .hero-art { height: 360px; max-width: 340px; }
+  .hero-art .slide { width: 150px; }
+  .hero-art .slide.is-back { right: 140px; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-art .slide { transition: opacity .3s ease; } }
+
+/* Brand banner under the index hero */
+.brand-banner { margin-top: -40px; position: relative; z-index: 1; }
+.brand-banner img { display: block; width: 100%; height: auto; aspect-ratio: 1376 / 600; object-fit: cover; border-radius: 24px; box-shadow: 0 20px 50px rgba(20,27,45,.25); }
 
 .gallery .shots { grid-auto-columns: minmax(150px, 220px); }
 

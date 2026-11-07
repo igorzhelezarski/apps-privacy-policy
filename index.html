@@ -7,8 +7,8 @@
   <meta name="description" content="Reimagined Bits makes games and apps for phones and tablets. Find them and their privacy policies here.">
   <meta property="og:title" content="Reimagined Bits">
   <meta property="og:description" content="Games and apps for phones and tablets, and their privacy policies.">
-  <meta property="og:image" content="whack-it-world/img/feature.jpg">
-  <link rel="icon" href="whack-it-world/img/icon-64.png">
+  <meta property="og:image" content="assets/brand/featured.jpg">
+  <link rel="icon" href="assets/brand/logo-64.png">
   <link rel="preload" href="assets/fonts/nunito-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -18,7 +18,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="./" aria-label="Reimagined Bits home">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#4a4fd8"/><rect x="7" y="7" width="8" height="8" rx="2.5" fill="#fff"/><rect x="17" y="7" width="8" height="8" rx="2.5" fill="#f5b301"/><rect x="7" y="17" width="8" height="8" rx="2.5" fill="#f5b301"/><rect x="17" y="17" width="8" height="8" rx="2.5" fill="#fff" opacity=".55"/></svg>
+      <img src="assets/brand/logo-64.png" alt="" width="32" height="32">
       Reimagined Bits
     </a>
     <nav class="nav" aria-label="Main">
@@ -34,6 +34,7 @@
   <section class="hero">
     <div class="wrap">
       <div>
+      <img class="hero-logo" src="assets/brand/logo.png" alt="Reimagined Bits logo" width="84" height="84">
       <span class="eyebrow">Independent studio</span>
       <h1>Small games and apps, made with care.</h1>
       <p>Reimagined Bits makes bright, simple games and apps for phones and tablets. No accounts, no sign-ins, and as little data as possible.</p>
@@ -45,12 +46,23 @@
         <a class="btn btn-light" href="#privacy">Find a privacy policy</a>
       </div>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <img src="whack-it-world/img/shot-home.jpg" alt="" width="540" height="1169">
-        <img src="fading-tic-tac-toe/img/shot-fading.jpg" alt="" width="540" height="1080">
+      <div class="hero-art" role="region" aria-roledescription="carousel" aria-label="Our games">
+        <a class="slide" href="whack-it-world/" data-name="Whack It World" tabindex="-1"><img src="whack-it-world/img/shot-home.jpg" alt="Whack It World" width="540" height="960"></a>
+        <a class="slide" href="fading-tic-tac-toe/" data-name="Fading Tic-Tac-Toe" tabindex="-1"><img src="fading-tic-tac-toe/img/shot-fading.jpg" alt="Fading Tic-Tac-Toe" width="540" height="960"></a>
+        <a class="slide" href="cat-tower/" data-name="Cat Tower" tabindex="-1"><img src="cat-tower/img/shot-home.jpg" alt="Cat Tower" width="540" height="960"></a>
+        <a class="slide" href="bloomgrid/" data-name="Bloomgrid" tabindex="-1"><img src="bloomgrid/img/shot-home.jpg" alt="Bloomgrid" width="540" height="960"></a>
+        <a class="slide" href="arrows-escape/" data-name="Arrows Escape" tabindex="-1"><img src="arrows-escape/img/shot-home.jpg" alt="Arrows Escape" width="540" height="960"></a>
+        <div class="caption">
+          <a id="slide-link" href="whack-it-world/">Whack It World<span>Privacy policy &rarr;</span></a>
+          <div class="dots" role="group" aria-label="Choose a game"></div>
+        </div>
       </div>
     </div>
   </section>
+
+  <div class="wrap brand-banner">
+    <img src="assets/brand/featured.jpg" alt="Reimagined Bits: Innovative apps and play" width="1376" height="768">
+  </div>
 
   <section id="games" class="section">
     <div class="wrap">
@@ -279,5 +291,38 @@
     </div>
   </div>
 </footer>
+<script>
+// Hero slider: the front phone shows one game, the back phone the next, and they move on every few seconds.
+(function () {
+  var art = document.querySelector('.hero-art');
+  if (!art) return;
+  var slides = [].slice.call(art.querySelectorAll('.slide'));
+  var link = document.getElementById('slide-link');
+  var dots = art.querySelector('.dots');
+  var n = slides.length, cur = 0, timer = null;
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  slides.forEach(function (s, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', s.dataset.name);
+    b.addEventListener('click', function () { show(i); restart(); });
+    dots.appendChild(b);
+  });
+  function show(i) {
+    var prev = cur; cur = (i + n) % n;
+    slides.forEach(function (s, k) {
+      s.className = 'slide' + (k === cur ? ' is-front' : k === (cur + 1) % n ? ' is-back' : k === prev && prev !== cur ? ' is-out' : ' is-in');
+      s.tabIndex = k === cur ? 0 : -1;
+    });
+    [].forEach.call(dots.children, function (d, k) { d.setAttribute('aria-current', k === cur ? 'true' : 'false'); });
+    link.href = slides[cur].getAttribute('href');
+    link.firstChild.nodeValue = slides[cur].dataset.name;
+  }
+  function restart() { if (still) return; clearInterval(timer); timer = setInterval(function () { show(cur + 1); }, 3500); }
+  art.addEventListener('mouseenter', function () { clearInterval(timer); });
+  art.addEventListener('mouseleave', restart);
+  show(0); restart();
+})();
+</script>
 </body>
 </html>
