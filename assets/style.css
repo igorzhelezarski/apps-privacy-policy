@@ -197,6 +197,29 @@ section { scroll-margin-top: 80px; }
 @media (prefers-color-scheme: dark) {
   .theme-blue { --game: #93b2ff; --game-soft: #1c2747; }
 }
+.theme-purple {
+  --hero-bg: linear-gradient(180deg, #6a3fb0 0%, #33205f 100%);
+  --banner-bg: #3a2468;
+  --game: #7a3fc4;
+  --game-soft: #f0e8fb;
+}
+.theme-teal {
+  --hero-bg: linear-gradient(180deg, #1f6d6a 0%, #0b2a33 100%);
+  --banner-bg: #0f3a3f;
+  --game: #1b7f72;
+  --game-soft: #e1f3ef;
+}
+.theme-slate {
+  --hero-bg: linear-gradient(180deg, #34465f 0%, #1f2d3d 100%);
+  --banner-bg: #1f2d3d;
+  --game: #d4631c;
+  --game-soft: #fcebdf;
+}
+@media (prefers-color-scheme: dark) {
+  .theme-purple { --game: #c6a4ff; --game-soft: #2a1f45; }
+  .theme-teal { --game: #7fd8c6; --game-soft: #14302f; }
+  .theme-slate { --game: #ffa36b; --game-soft: #3a2619; }
+}
 
 /* Policy page */
 .policy-hero { background: var(--hero-bg, linear-gradient(180deg, #8ccf5c 0%, #4ba43f 100%)); color: #fff; position: relative; overflow: hidden; }

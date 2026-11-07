@@ -1,0 +1,10 @@
+{
+  "hub": { "site": "reimagined-bits" },
+  "apps": {
+    "whack-it-world": { "target": "whack", "site": "whack-it-world-site" },
+    "fading-tic-tac-toe": { "target": "ttt", "site": "fading-tic-tac-toe-site" },
+    "cat-tower": { "target": "cat", "site": "cat-tower-site" },
+    "bloomgrid": { "target": "bloom", "site": "bloomgrid-site" },
+    "arrows-escape": { "target": "arrows", "site": "arrows-escape-site" }
+  }
+}
